@@ -1,0 +1,154 @@
+---
+import { portfolio, type Lang } from '../data/portfolio';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const copy = portfolio[lang];
+const linkedinLocale = { es: 'es-ES', en: 'en-US', fr: 'fr-FR' }[lang];
+
+// Only these phrases receive emphasis. The rest of the personal text stays as written.
+const highlightPhrases: Record<Lang, string[]> = {
+  es: ['analítica y SEO', 'Desarrollo de Aplicaciones Web (DAW)', 'Ingeniería Informática', 'más del 50% de la carrera superada y con un B2 de francés', 'experiencia sólida desde el otro lado de la barrera'],
+  en: ['analytics and SEO', 'Web Application Development (DAW)', 'Computer Engineering', 'more than half of the degree completed and a B2 level in French', 'solid experience from the other side of the table'],
+  fr: ['analytics et de SEO', 'Développeur d’Applications Web (DAW)', 'Licence d’Ingénierie Informatique', 'plus de la moitié de la licence est validée et que j’ai un niveau B2 en français', 'solide expérience de l’autre côté de la barrière'],
+};
+
+function highlight(text: string): string {
+  return highlightPhrases[lang].reduce((result, phrase) => result.replace(phrase, `<strong>${phrase}</strong>`), text);
+}
+---
+
+<!-- The header is intentionally small: it helps navigation without turning the CV into an app shell. -->
+<header class="site-header">
+  <div class="header-inner wrap">
+    <a class="site-name" href={lang === 'es' ? '/es/' : `/${lang}/`}>guinon.dev</a>
+    <nav aria-label="Main navigation">
+      <a href="#experiencia">{copy.nav.experience}</a>
+      <a href="#proyectos">{copy.nav.projects}</a>
+      <a href="#sobre-mi">{copy.nav.about}</a>
+      <a href="#contacto">{copy.nav.contact}</a>
+      <span class="language-links" aria-label="Language selector">
+        <a href="/es/" class={lang === 'es' ? 'active' : ''} aria-current={lang === 'es' ? 'page' : undefined}>ES</a>
+        <a href="/en/" class={lang === 'en' ? 'active' : ''} aria-current={lang === 'en' ? 'page' : undefined}>EN</a>
+        <a href="/fr/" class={lang === 'fr' ? 'active' : ''} aria-current={lang === 'fr' ? 'page' : undefined}>FR</a>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+  <section class="intro wrap" id="inicio" aria-labelledby="name">
+    <div><img class="intro-photo" src="/image.png" width="152" height="152" alt="Álvaro M. Guiñón" /></div>
+    <div>
+      <h1 id="name">Álvaro M. Guiñón</h1>
+      <p class="role">{copy.role}</p>
+      <p class="summary">{copy.summary}</p>
+      <div class="intro-actions">
+        <a href="mailto:alvaroguinon@outlook.com">{copy.emailAction}</a>
+        <a href="https://github.com/alguimo" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href={`https://www.linkedin.com/in/alvaroguinon/?locale=${linkedinLocale}`} target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The aside keeps contact details and the three skill areas visible while the main column carries the story. -->
+  <div class="layout wrap">
+    <aside aria-label="Additional information">
+      <section>
+        <h2>{copy.contact}</h2>
+        <p><a href="mailto:alvaroguinon@outlook.com">alvaroguinon@outlook.com</a></p>
+        <p><a href={`https://www.linkedin.com/in/alvaroguinon/?locale=${linkedinLocale}`} target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+        <p><a href="tel:+33651643494">(+33) 651 643 494</a></p>
+        <p><a href="tel:+34620956384">(+34) 620 95 63 84</a></p>
+        <p>40370 Rion-des-Landes, France</p>
+      </section>
+      <section>
+        <h2>{copy.situation}</h2>
+        <p>{copy.situationText}</p>
+        <p>{copy.location}</p>
+      </section>
+      <section>
+        <h2>{copy.stack}</h2>
+        <ul><li>Java · Spring Boot</li><li>SQL · JPA / Hibernate</li><li>Angular · TypeScript</li><li>Astro · HTML · CSS</li><li>Docker · Git</li></ul>
+      </section>
+      <section>
+        <h2>{copy.data}</h2>
+        <p>{copy.dataText}</p>
+      </section>
+      <section>
+        <h2>{copy.product}</h2>
+        <p>{copy.productText}</p>
+      </section>
+      <section>
+        <h2>{copy.languages}</h2>
+        <ul>{copy.languageList.map((language) => <li>{language}</li>)}</ul>
+      </section>
+    </aside>
+
+    <div class="content">
+      <!-- Experience is split into recent work and the longer GAMETV progression. -->
+      <section id="experiencia" aria-labelledby="experience-title">
+        <h2 id="experience-title">{copy.experienceTitle}</h2>
+        <div class="recent-jobs">
+          <p class="recent-label">{copy.recentExperience}</p>
+          {copy.experience.slice(0, 2).map((job) => (
+            <article class="job"><time>{job.period}</time><div><h3>{job.role}</h3><div class="company">{job.company}</div><ul>{job.bullets.map((bullet) => <li>{bullet}</li>)}</ul></div></article>
+          ))}
+        </div>
+        <section class="company-group" aria-label="GAMETV">
+          <header><h3>GAMETV · Movistar eSports</h3><span>{copy.gametvPeriod}</span></header>
+          {copy.experience.slice(2).map((job) => (
+            <article class="job"><time>{job.period}</time><div><h3>{job.role}</h3><div class="company">{job.company}</div><ul>{job.bullets.map((bullet) => <li>{bullet}</li>)}</ul></div></article>
+          ))}
+        </section>
+      </section>
+
+      <section aria-labelledby="education-title">
+        <h2 id="education-title">{copy.educationTitle}</h2>
+        {copy.education.map((item) => (
+          <article class="education">
+            <time>{item.period}</time>
+            <div><h3>{item.degree}</h3><div class="institution">{item.institution}</div><p>{item.detail}</p></div>
+          </article>
+        ))}
+      </section>
+
+      <!-- The first project spans both columns because it is the main Java/Spring example. -->
+      <section id="proyectos" aria-labelledby="projects-title">
+        <h2 id="projects-title">{copy.projectsTitle}</h2>
+        <div class="projects">
+          {copy.projects.map((project, index) => (
+            <article class:list={['project', { 'featured-project': index === 0 }]}>
+              <h3><a href={project.url} target="_blank" rel="noopener noreferrer">{project.name}</a></h3>
+              <p class="kind">{project.kind}</p>
+              <p>{project.description}</p>
+              <p>{project.detail}</p>
+              <p class="stack-text">{project.stack}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="sobre-mi" aria-labelledby="about-title">
+        <h2 id="about-title">{copy.aboutTitle}</h2>
+        <div class="about-copy">
+          {copy.about.map((paragraph) => <p set:html={highlight(paragraph)} />)}
+        </div>
+      </section>
+
+      <section id="contacto" class="closing" aria-labelledby="contact-title">
+        <div>
+          <h2 id="contact-title">{copy.contactTitle}</h2>
+          <p>{copy.contactText}</p>
+          <span class="contact-phones">FR <a href="tel:+33651643494">(+33) 651 643 494</a> · ES <a href="tel:+34620956384">(+34) 620 95 63 84</a></span>
+        </div>
+        <a href="mailto:alvaroguinon@outlook.com">alvaroguinon@outlook.com</a>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="wrap">{copy.footer} · <a href="https://github.com/alguimo" target="_blank" rel="noopener noreferrer">github.com/alguimo</a></footer>

@@ -1,0 +1,11 @@
+---
+/**
+ * Root route (`/`). Renders the portfolio in Spanish by default.
+ * All markup and data live in `PortfolioPage.astro` and `src/data/*`.
+ */
+import Layout from '../layouts/Layout.astro';
+import PortfolioPage from '../components/PortfolioPage.astro';
+---
+<Layout title="Álvaro M. Guiñón | Desarrollador web" description="CV y portfolio de Álvaro M. Guiñón, desarrollador web especializado en Java, Spring Boot y Angular." lang="es">
+  <PortfolioPage lang="es" />
+</Layout>
