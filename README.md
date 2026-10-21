@@ -1,40 +1,35 @@
-# guinon.dev
+# My personal portfolio
 
-Personal CV and portfolio for Álvaro M. Guiñón.
+This repository contains my personal portfolio, published at [guinon.dev](https://guinon.dev).
 
-The site is a static Astro project with Spanish, English and French routes:
+I created it to present my professional experience, education and selected projects in web development, data and automation. It also explains my transition from digital journalism and product leadership into software development.
 
-- `/es/`
-- `/en/`
-- `/fr/`
+## Technology
 
-## Stack
+The portfolio is built with:
 
 - Astro
 - HTML and CSS
-- Java, Spring Boot and Angular in the professional profile
-- GitHub Pages for deployment
+- TypeScript
+- GitHub Actions
+- GitHub Pages
 
-## Local development
+The site also presents technologies I work with or am currently learning, including Java, Spring Boot, Angular, Python, SQL, Docker and R.
 
-Use Node `24.15.0` or any version supported by the `engines` field in `package.json`.
+## Structure
 
-```sh
-nvm use
-npm ci
-npm run dev
-```
+The portfolio is available in three languages:
 
-The development server runs at `http://localhost:4321`.
+- Spanish: `/es/`
+- English: `/en/`
+- French: `/fr/`
 
-## Production build
+Portfolio content is kept separate from the page template so that professional experience, education and projects can be updated independently.
 
-```sh
-npm run build
-```
+The site is generated as a static website and published automatically to GitHub Pages whenever the `main` branch is updated.
 
-Astro writes the static site to `dist/`. The GitHub Actions workflow builds and publishes that directory on every push to `main`.
+## Website
 
-## Domain
+You can visit the portfolio at:
 
-`public/CNAME` configures `guinon.dev` as the GitHub Pages custom domain. The repository settings must use **GitHub Actions** as the Pages source, and the domain DNS must point to GitHub Pages.
+[guinon.dev](https://guinon.dev)
