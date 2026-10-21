@@ -10,15 +10,63 @@ interface Props {
 }
 
 const { title, description, lang = 'es' } = Astro.props;
+const site = Astro.site ?? new URL('https://guinon.dev');
+const canonical = new URL(Astro.url.pathname, site).href;
+const localizedUrl = (code: Lang) => new URL(`/${code}/`, site).href;
 ---
 <!doctype html>
 <html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script is:inline>
+      (() => {
+        if (location.pathname !== '/') return;
+
+        const supported = ['es', 'en', 'fr'];
+        let lang = null;
+
+        try {
+          lang = localStorage.getItem('lang');
+        } catch {}
+
+        if (!supported.includes(lang)) {
+          const preferred = navigator.languages?.length ? navigator.languages : [navigator.language];
+          lang = 'en';
+
+          for (const tag of preferred) {
+            const primary = String(tag).toLowerCase().split('-')[0];
+            if (supported.includes(primary)) {
+              lang = primary;
+              break;
+            }
+          }
+        }
+
+        location.replace('/' + lang + '/');
+      })();
+
+      document.addEventListener('click', (event) => {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+
+        const link = target.closest('[data-lang]');
+        if (!link) return;
+
+        try {
+          localStorage.setItem('lang', link.dataset.lang);
+        } catch {}
+      });
+    </script>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="es" href={localizedUrl('es')} />
+    <link rel="alternate" hreflang="en" href={localizedUrl('en')} />
+    <link rel="alternate" hreflang="fr" href={localizedUrl('fr')} />
+    <link rel="alternate" hreflang="x-default" href={new URL('/', site).href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta property="og:title" content={title} />
+    <meta property="og:url" content={canonical} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="/image.png" />
     <meta name="twitter:card" content="summary_large_image" />

@@ -31,9 +31,9 @@ function highlight(text: string): string {
       <a href="#sobre-mi">{copy.nav.about}</a>
       <a href="#contacto">{copy.nav.contact}</a>
       <span class="language-links" aria-label="Language selector">
-        <a href="/es/" class={lang === 'es' ? 'active' : ''} aria-current={lang === 'es' ? 'page' : undefined}>ES</a>
-        <a href="/en/" class={lang === 'en' ? 'active' : ''} aria-current={lang === 'en' ? 'page' : undefined}>EN</a>
-        <a href="/fr/" class={lang === 'fr' ? 'active' : ''} aria-current={lang === 'fr' ? 'page' : undefined}>FR</a>
+        <a href="/es/" data-lang="es" class={lang === 'es' ? 'active' : ''} aria-current={lang === 'es' ? 'page' : undefined}>ES</a>
+        <a href="/en/" data-lang="en" class={lang === 'en' ? 'active' : ''} aria-current={lang === 'en' ? 'page' : undefined}>EN</a>
+        <a href="/fr/" data-lang="fr" class={lang === 'fr' ? 'active' : ''} aria-current={lang === 'fr' ? 'page' : undefined}>FR</a>
       </span>
     </nav>
   </div>
