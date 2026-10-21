@@ -26,10 +26,10 @@ function highlight(text: string): string {
   <div class="header-inner wrap">
     <a class="site-name" href={lang === 'es' ? '/es/' : `/${lang}/`}>guinon.dev</a>
     <nav aria-label="Main navigation">
-      <a href="#experiencia">{copy.nav.experience}</a>
-      <a href="#proyectos">{copy.nav.projects}</a>
-      <a href="#sobre-mi">{copy.nav.about}</a>
-      <a href="#contacto">{copy.nav.contact}</a>
+      <a href="#experience">{copy.nav.experience}</a>
+      <a href="#projects">{copy.nav.projects}</a>
+      <a href="#about-me">{copy.nav.about}</a>
+      <a href="#contact">{copy.nav.contact}</a>
       <span class="language-links" aria-label="Language selector">
         <a href="/es/" data-lang="es" class={lang === 'es' ? 'active' : ''} aria-current={lang === 'es' ? 'page' : undefined}>ES</a>
         <a href="/en/" data-lang="en" class={lang === 'en' ? 'active' : ''} aria-current={lang === 'en' ? 'page' : undefined}>EN</a>
@@ -90,7 +90,7 @@ function highlight(text: string): string {
 
     <div class="content">
       <!-- Experience is split into recent work and the longer GAMETV progression. -->
-      <section id="experiencia" aria-labelledby="experience-title">
+      <section id="experience" aria-labelledby="experience-title">
         <h2 id="experience-title">{copy.experienceTitle}</h2>
         <div class="recent-jobs">
           <p class="recent-label">{copy.recentExperience}</p>
@@ -117,7 +117,7 @@ function highlight(text: string): string {
       </section>
 
       <!-- The first project spans both columns because it is the main Java/Spring example. -->
-      <section id="proyectos" aria-labelledby="projects-title">
+      <section id="projects" aria-labelledby="projects-title">
         <h2 id="projects-title">{copy.projectsTitle}</h2>
         <div class="projects">
           {copy.projects.map((project, index) => (
@@ -132,14 +132,14 @@ function highlight(text: string): string {
         </div>
       </section>
 
-      <section id="sobre-mi" aria-labelledby="about-title">
+      <section id="about-me" aria-labelledby="about-title">
         <h2 id="about-title">{copy.aboutTitle}</h2>
         <div class="about-copy">
           {copy.about.map((paragraph) => <p set:html={highlight(paragraph)} />)}
         </div>
       </section>
 
-      <section id="contacto" class="closing" aria-labelledby="contact-title">
+      <section id="contact" class="closing" aria-labelledby="contact-title">
         <div>
           <h2 id="contact-title">{copy.contactTitle}</h2>
           <p>{copy.contactText}</p>
