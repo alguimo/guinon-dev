@@ -97,7 +97,7 @@ export const portfolio: Record<Lang, PortfolioCopy> = {
     projectsTitle: 'Proyectos seleccionados',
     contactTitle: 'Contacto',
     contactText: 'Si buscas un desarrollador en formación con experiencia previa coordinando producto y equipos técnicos, puedes escribirme directamente.',
-    footer: 'Última revisión: 2026',
+    footer: 'Octubre 2026',
     // The first two entries are the recent roles; the last two form the GAMETV progression.
     experience: [
       { period: '05/2025 — 09/2025', role: 'Consultor tecnológico independiente', company: 'GAMETV · Movistar eSports · Alcobendas', bullets: ['Supervisión y ejecución de la migración de Movistar eSports a WordPress, manteniendo la continuidad del sitio.', 'Auditoría de código y revisión de mantenibilidad.', 'Implementación de una CMP y herramientas de medición de audiencia.'] },
@@ -131,7 +131,10 @@ export const portfolio: Record<Lang, PortfolioCopy> = {
       'At the same time, the opportunity came up to move to France. The problem? I did not speak a word of French. So my roadmap for the coming months was clear: continue training to design good systems, deepen my knowledge of data (Python and R) and learn French. Now, with more than half of the degree completed and a B2 level in French, I am looking for an opportunity to apply everything I have learned. I am a junior developer, but I bring solid experience from the other side of the table, which gives me a broader perspective on the product lifecycle.',
       'If you would like to get to know me better, I invite you to write to me. You can also see some of my side projects on my GitHub profile. Thank you for making it this far!',
     ],
-    projectsTitle: 'Selected projects', contactTitle: 'Contact', contactText: 'If you are looking for a developer in training with previous experience coordinating product and technical teams, you can contact me directly.', footer: 'Last reviewed: 2026',
+    projectsTitle: 'Selected projects', 
+    contactTitle: 'Contact', 
+    contactText: 'If you are looking for a developer in training with previous experience coordinating product and technical teams, you can contact me directly.', 
+    footer: 'October 2026',
     experience: [
       { period: '05/2025 — 09/2025', role: 'Independent technology consultant', company: 'GAMETV · Movistar eSports · Alcobendas', bullets: ['Supervised and executed the migration of Movistar eSports to WordPress while maintaining site continuity.', 'Audited code and reviewed maintainability.', 'Implemented a CMP and audience measurement tools.'] },
       { period: '03/2025 — 05/2025', role: 'Full-Stack Developer · internship', company: 'Integra Consultores · Castellón de la Plana', bullets: ['Built applications with Angular on the frontend and Java / Spring Boot on the backend.', 'Created and consumed REST APIs with Spring Data JPA and Hibernate.', 'Applied DTOs, MapStruct mappers and separation between controllers and services.'] },
@@ -162,7 +165,10 @@ export const portfolio: Record<Lang, PortfolioCopy> = {
       'En parallèle, l’occasion de nous installer en France s’est présentée. Le problème ? Je ne parlais pas un mot de français. Ma feuille de route pour les mois suivants était donc claire : continuer à me former pour concevoir de bons systèmes, approfondir les données (Python et R) et apprendre le français. Maintenant que plus de la moitié de la licence est validée et que j’ai un niveau B2 en français, je cherche une opportunité pour appliquer toutes mes connaissances. Je suis un développeur junior, mais j’apporte une solide expérience de l’autre côté de la barrière, ce qui me donne une perspective plus complète du cycle de vie d’un produit.',
       'Si vous souhaitez mieux me connaître, je vous invite à m’écrire. Vous pouvez également consulter certains de mes side-projects sur mon profil GitHub. Merci d’être arrivé jusqu’ici !',
     ],
-    projectsTitle: 'Projets sélectionnés', contactTitle: 'Contact', contactText: 'Si vous recherchez un développeur en formation ayant déjà coordonné des produits et des équipes techniques, vous pouvez me contacter directement.', footer: 'Dernière mise à jour : 2026',
+    projectsTitle: 'Projets sélectionnés', 
+    contactTitle: 'Contact', 
+    contactText: 'Si vous recherchez un développeur en formation ayant déjà coordonné des produits et des équipes techniques, vous pouvez me contacter directement.', 
+    footer: 'Octobre 2026',
     experience: [
       { period: '05/2025 — 09/2025', role: 'Consultant technologique indépendant', company: 'GAMETV · Movistar eSports · Alcobendas', bullets: ['Supervision et exécution de la migration de Movistar eSports vers WordPress, avec maintien de la continuité du site.', 'Audit du code et revue de la maintenabilité.', 'Mise en place d’une CMP et d’outils de mesure d’audience.'] },
       { period: '03/2025 — 05/2025', role: 'Développeur Full-Stack · stage', company: 'Integra Consultores · Castellón de la Plana', bullets: ['Développement d’applications avec Angular côté frontend et Java / Spring Boot côté backend.', 'Création et consommation d’API REST avec Spring Data JPA et Hibernate.', 'Utilisation de DTO, mappers MapStruct et séparation des contrôleurs et services.'] },
