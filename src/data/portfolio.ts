@@ -49,6 +49,8 @@ export interface PortfolioCopy {
   contactTitle: string;
   contactText: string;
   footer: string;
+  privacyTitle: string;
+  privacyText: string;
   experience: ExperienceItem[];
   education: EducationItem[];
   projects: ProjectItem[];
@@ -98,6 +100,8 @@ export const portfolio: Record<Lang, PortfolioCopy> = {
     contactTitle: 'Contacto',
     contactText: 'Si buscas un desarrollador en formación con experiencia previa coordinando producto y equipos técnicos, puedes escribirme directamente.',
     footer: 'Octubre 2026',
+    privacyTitle: 'Privacidad',
+    privacyText: 'Esta web no utiliza analítica, publicidad ni seguimiento y no recoge datos mediante formularios. La preferencia de idioma se guarda únicamente en el navegador. El sitio está alojado en GitHub Pages, cuyo proveedor puede tratar datos técnicos de conexión. Los contactos por email o teléfono los inicia directamente la persona visitante.',
     // The first two entries are the recent roles; the last two form the GAMETV progression.
     experience: [
       { period: '05/2025 — 09/2025', role: 'Consultor tecnológico independiente', company: 'GAMETV · Movistar eSports · Alcobendas', bullets: ['Supervisión y ejecución de la migración de Movistar eSports a WordPress, manteniendo la continuidad del sitio.', 'Auditoría de código y revisión de mantenibilidad.', 'Implementación de una CMP y herramientas de medición de audiencia.'] },
@@ -135,6 +139,8 @@ export const portfolio: Record<Lang, PortfolioCopy> = {
     contactTitle: 'Contact', 
     contactText: 'If you are looking for a developer in training with previous experience coordinating product and technical teams, you can contact me directly.', 
     footer: 'October 2026',
+    privacyTitle: 'Privacy',
+    privacyText: 'This website does not use analytics, advertising or tracking, and does not collect data through forms. The language preference is stored only in the browser. The site is hosted on GitHub Pages, whose provider may process technical connection data. Email and phone contacts are initiated directly by the visitor.',
     experience: [
       { period: '05/2025 — 09/2025', role: 'Independent technology consultant', company: 'GAMETV · Movistar eSports · Alcobendas', bullets: ['Supervised and executed the migration of Movistar eSports to WordPress while maintaining site continuity.', 'Audited code and reviewed maintainability.', 'Implemented a CMP and audience measurement tools.'] },
       { period: '03/2025 — 05/2025', role: 'Full-Stack Developer · internship', company: 'Integra Consultores · Castellón de la Plana', bullets: ['Built applications with Angular on the frontend and Java / Spring Boot on the backend.', 'Created and consumed REST APIs with Spring Data JPA and Hibernate.', 'Applied DTOs, MapStruct mappers and separation between controllers and services.'] },
@@ -169,6 +175,8 @@ export const portfolio: Record<Lang, PortfolioCopy> = {
     contactTitle: 'Contact', 
     contactText: 'Si vous recherchez un développeur en formation ayant déjà coordonné des produits et des équipes techniques, vous pouvez me contacter directement.', 
     footer: 'Octobre 2026',
+    privacyTitle: 'Confidentialité',
+    privacyText: 'Ce site n’utilise ni outils d’analyse, ni publicité, ni suivi, et ne recueille pas de données au moyen de formulaires. La préférence de langue est enregistrée uniquement dans le navigateur. Le site est hébergé par GitHub Pages, dont le fournisseur peut traiter des données techniques de connexion. Les contacts par e-mail ou téléphone sont initiés directement par la personne visiteuse.',
     experience: [
       { period: '05/2025 — 09/2025', role: 'Consultant technologique indépendant', company: 'GAMETV · Movistar eSports · Alcobendas', bullets: ['Supervision et exécution de la migration de Movistar eSports vers WordPress, avec maintien de la continuité du site.', 'Audit du code et revue de la maintenabilité.', 'Mise en place d’une CMP et d’outils de mesure d’audience.'] },
       { period: '03/2025 — 05/2025', role: 'Développeur Full-Stack · stage', company: 'Integra Consultores · Castellón de la Plana', bullets: ['Développement d’applications avec Angular côté frontend et Java / Spring Boot côté backend.', 'Création et consommation d’API REST avec Spring Data JPA et Hibernate.', 'Utilisation de DTO, mappers MapStruct et séparation des contrôleurs et services.'] },

@@ -91,7 +91,11 @@ aside li + li { margin-top: 5px; }
 .closing > a { white-space: nowrap; font-weight: 650; }
 .contact-phones { display: block; margin-top: 12px; color: var(--muted); font-size: .9rem; }
 .contact-phones a { margin-left: 8px; font-weight: 400; }
-footer { padding: 20px 0 34px; border-top: 1px solid var(--line); color: var(--muted); font-size: .82rem; }
+footer { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding: 20px 0 34px; border-top: 1px solid var(--line); color: var(--muted); font-size: .82rem; }
+.privacy-note { position: relative; }
+.privacy-note summary { cursor: pointer; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.privacy-note summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.privacy-note p { position: absolute; right: 0; bottom: calc(100% + 12px); width: min(420px, calc(100vw - 32px)); margin: 0; padding: 14px 16px; border: 1px solid var(--line); background: var(--paper); color: var(--ink); box-shadow: 0 8px 24px rgb(0 0 0 / 10%); line-height: 1.5; }
 
 @media (max-width: 720px) {
   html { scroll-padding-top: 62px; }
@@ -111,6 +115,9 @@ footer { padding: 20px 0 34px; border-top: 1px solid var(--line); color: var(--m
   .project:nth-child(n+2) { padding-top: 20px; border-top: 1px solid var(--line); }
   .closing { display: block; }
   .closing > a { display: inline-block; margin-top: 18px; }
+  footer { display: block; }
+  .privacy-note { margin-top: 12px; }
+  .privacy-note p { left: 0; right: auto; }
 }
 
 @media print {
