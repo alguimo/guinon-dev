@@ -130,11 +130,11 @@ const cvData = {
           'Utilitaire Windows convertissant en mémoire les exports XML du logiciel médical français WEDA en PDF A4 sur deux colonnes, avec surveillance de dossier et mise à jour SHA-256.',
       },
       {
-        name: 'Cooperativa',
-        url: 'https://github.com/alguimo/cooperativa',
-        stack: 'Node.js · Express · Resend · Railway · DNS',
+        name: 'How Long Without Raids',
+        url: 'https://github.com/alguimo/howlongwithoutraids',
+        stack: 'Python · PostgreSQL 16 · Astro · TypeScript · GitHub Actions',
         description:
-          'Maintenance d’un site existant en production : migration des e-mails vers Resend, filtre anti-spam (honeypot et langue), catalogue avec loupe et déploiement Railway.',
+          'Application web statique trilingue alimentée par un pipeline ETL Python/PostgreSQL automatisé chaque jour via GitHub Actions, avec tests pytest/Vitest et déploiement GitHub Pages.',
       },
     ],
     skills: [
@@ -262,11 +262,11 @@ const cvData = {
           'Utilidad para Windows que convierte en memoria exportaciones XML del software médico WEDA en PDF A4 a dos columnas, con carpeta vigilada y actualización verificada por SHA-256.',
       },
       {
-        name: 'Cooperativa',
-        url: 'https://github.com/alguimo/cooperativa',
-        stack: 'Node.js · Express · Resend · Railway · DNS',
+        name: 'How Long Without Raids',
+        url: 'https://github.com/alguimo/howlongwithoutraids',
+        stack: 'Python · PostgreSQL 16 · Astro · TypeScript · GitHub Actions',
         description:
-          'Mantenimiento de una web en producción: migración de correo a Resend, filtrado anti-spam (honeypot e idioma), catálogo con lupa y despliegue en Railway.',
+          'Web estática trilingüe alimentada por un pipeline ETL en Python y PostgreSQL automatizado a diario en GitHub Actions, con tests en pytest y Vitest y despliegue en GitHub Pages.',
       },
     ],
     skills: [
@@ -392,11 +392,11 @@ const cvData = {
           'Windows utility converting French WEDA medical XML exports in memory into two-column A4 PDFs, with watched-folder tray mode and SHA-256 verified updates.',
       },
       {
-        name: 'Cooperativa',
-        url: 'https://github.com/alguimo/cooperativa',
-        stack: 'Node.js · Express · Resend · Railway · DNS',
+        name: 'How Long Without Raids',
+        url: 'https://github.com/alguimo/howlongwithoutraids',
+        stack: 'Python · PostgreSQL 16 · Astro · TypeScript · GitHub Actions',
         description:
-          'Production website maintenance: migrated email delivery to Resend, added honeypot and language spam filtering, built a catalog with label zoom, and deployed on Railway.',
+          'Trilingual static web app fed by a daily Python/PostgreSQL ETL pipeline on GitHub Actions, with pytest and Vitest test suites, local sprite caching, and GitHub Pages deployment.',
       },
     ],
     skills: [
